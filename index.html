@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aberdeen GameJam 2027 | University of Aberdeen</title>
+  <meta name="description" content="In Aberdeen GameJam 2027, teams have one week to build a game from scratch. The theme is announced on Wednesday 27 January 2027 and the in-person event is on Wednesday 3 February 2027.">
+  <meta name="theme-color" content="#111d2f">
+  <meta property="og:title" content="Aberdeen GameJam 2027">
+  <meta property="og:description" content="Teams have one week to build a game from scratch. The theme is announced on 27 January 2027 and the in-person event is on 3 February 2027.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Logo mark (tower + controller), defined once and reused with <use href="#gj-mark"> -->
+  <svg width="0" height="0" class="svg-defs" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="gj-mark">
+        <path d="M1723.05,1995.45c215.99,92.42,275.8,357.07,538.01,357.07s322.06-264.65,538.01-357.07c89.78-38.43,180.33-23.27,265.09,22.03v-38.64l-80.6-75.71-.83-219.77h19.82v-149.47h-7.34l-9.21-9.21,6.12-6.12v-18.5l-5.37-5.37v-4.8l3.62-3.62v-19.19l-4.67-4.67v-4.88l2.75-2.75v-19.76l-7.1-7.1,5.07-5.07v-13.72h-5.07v-7.71h-14.21v7.71h-5.07v13.72l5.07,5.07-7.1,7.1v19.76l2.75,2.75v4.88l-4.67,4.67v19.19l3.62,3.62v4.8l-5.37,5.37v18.5l6.12,6.12-9.21,9.21h-7.73l-21-21v-75.18l-16.59-16.59v-77.85l-31.39-24.2v-36.77l-12.97-10.37v-18.77l-11.44-17.39v-3.51h3.81l-3.97-21.21h-3.97v-8.85h2.9v-6.56l-5.8-15.56h-3.97v-7.63h4.88l-5.49-21.82h-6.41v-10.68l10.83-10.83v-5.95h-29.92v5.95l10.83,10.83v10.68h-6.41l-5.49,21.82h4.88v7.63h-3.97l-5.8,15.56v6.56h2.9v8.85h-3.97l-3.97,21.21h3.81v3.51l-11.44,17.39v18.77l-12.97,10.37v36.77l-31.39,24.2v12.9h-4.12l-4.6-4.16c-2.4-5.69-5.11-16.79,6.75-22.78-22.76-11.28-7.52-25.95-7.52-25.95,0,0,9.07,7.82,14.98,1.53,5.91-6.29-.45-14.63-.45-14.63,0,0,12.35-7.9,5.81-14.12-6.62-6.14-13.74,6.67-13.74,6.67,0,0-8.72-5.83-14.63.45-5.91,6.29,2.46,14.86,2.46,14.86,0,0-13.7,16.12-26.37-5.91-7.25,16.87-25.99,6.58-25.99,6.58l4.36,4.1-14.29-12.93c-1.11-5.88-.31-13.39,8.86-17.67-22.4-11.98-6.72-26.17-6.72-26.17,0,0,8.83,8.1,14.93,2,6.1-6.1,0-14.64,0-14.64,0,0,12.59-7.51,6.24-13.94-6.43-6.35-13.94,6.24-13.94,6.24,0,0-8.54-6.1-14.64,0-6.1,6.1,2,14.93,2,14.93,0,0-14.2,15.69-26.17-6.72-7.1,15.21-23.07,7.45-25.75,6.01l-11.14-10.08v-69.96h9.94v-6.5h-9.94l16.44-16.44h-16.44v-7.64l5.55-5.55v-20.06h-8.61v-6.5l4.97-4.97v-18.35h-7.64v-7.26l6.31-6.31v-19.3h-6.31l9.56-9.56v-8.41h-7.64v-7.64l-5.16-5.16h-6.5l-5.16,5.16v7.64h-7.64v8.41l9.56,9.56h-6.31v19.3l6.31,6.31v7.26h-7.64v18.35l4.97,4.97v6.5h-8.61v20.06l5.55,5.55v7.64h-16.44l16.44,16.44h-9.94v6.5h9.94v47.82l-34.14-30.91c-1.02-5.83-.08-13.13,8.91-17.33-22.4-11.98-6.72-26.17-6.72-26.17,0,0,8.83,8.1,14.93,2,6.1-6.1,0-14.64,0-14.64,0,0,12.59-7.51,6.24-13.94-6.43-6.35-13.94,6.24-13.94,6.24,0,0-8.54-6.1-14.64,0-6.1,6.1,2,14.93,2,14.93,0,0-14.2,15.69-26.17-6.72-6.62,14.18-20.93,8.4-25.03,6.38l-11.95-10.82c-.36-5.35,1.35-11.37,9.19-15.03-22.4-11.98-6.72-26.17-6.72-26.17,0,0,8.83,8.1,14.93,2,6.1-6.1,0-14.64,0-14.64,0,0,12.59-7.51,6.24-13.94-6.42-6.34-13.94,6.24-13.94,6.24,0,0-8.54-6.1-14.64,0-6.1,6.1,2,14.93,2,14.93,0,0-14.2,15.69-26.17-6.72-5.13,11-14.9,9.97-20.94,8.02l-10.55-9.54v-174.22l8.86-8.86v-146.45l18.66-50.14h-6.41l12.06-25.63h-39.58s-14.96-110.87-109.98-146.54h0s-21.45-20.92-21.45-39.41c10.76-2.48,19.32-18.21,19.32-31.46s-19.32-28.7-19.32-34.77v-42.77h3.04l8.67,8.67h13.96v-39.3h-16.83v5.79l-5.52,5.52h-3.31v-23.73l7.31-7.31v-7.59h-41.82v7.59l7.31,7.31v23.73h-3.31l-5.52-5.52v-5.79h-16.83v39.3h13.96l8.67-8.67h3.04v42.77c0,6.07-19.32,21.52-19.32,34.77s8.55,28.98,19.32,31.46c0,17.08-18.26,36.18-21.05,39-96.01,35.23-111.09,146.95-111.09,146.95h-31.5l12.06,25.63h-6.41l18.66,50.14v146.45l8.86,8.86v173.82l-10.99,9.94c-6.05,1.95-15.81,2.98-20.94-8.02-11.98,22.4-26.17,6.72-26.17,6.72,0,0,8.1-8.83,2-14.93-6.1-6.1-14.64,0-14.64,0,0,0-7.51-12.59-13.94-6.24-6.35,6.43,6.24,13.94,6.24,13.94,0,0-6.1,8.54,0,14.64,6.1,6.1,14.93-2,14.93-2,0,0,15.69,14.2-6.72,26.17,7.84,3.66,9.55,9.68,9.19,15.03l-11.95,10.82c-4.1,2.02-18.42,7.8-25.03-6.38-11.98,22.4-26.17,6.72-26.17,6.72,0,0,8.1-8.83,2-14.93-6.1-6.1-14.64,0-14.64,0,0,0-7.51-12.59-13.94-6.24-6.34,6.42,6.24,13.94,6.24,13.94,0,0-6.1,8.54,0,14.64,6.1,6.1,14.93-2,14.93-2,0,0,15.69,14.2-6.72,26.17,9,4.2,9.93,11.5,8.91,17.33l-34.14,30.9v-47.82h9.94v-6.5h-9.94l16.44-16.44h-16.44v-7.64l5.55-5.55v-20.06h-8.61v-6.5l4.97-4.97v-18.35h-7.64v-7.26l6.31-6.31v-19.3h-6.31l9.56-9.56v-8.41h-7.64v-7.64l-5.16-5.16h-6.5l-5.16,5.16v7.64h-7.64v8.41l9.56,9.56h-6.31v19.3l6.31,6.31v7.26h-7.64v18.35l4.97,4.97v6.5h-8.61v20.06l5.55,5.55v7.64h-16.44l16.44,16.44h-9.94v6.5h9.94v69.96l-11.14,10.08c-2.69,1.44-18.65,9.2-25.75-6.01-11.98,22.4-26.17,6.72-26.17,6.72,0,0,8.1-8.83,2-14.93-6.1-6.1-14.64,0-14.64,0,0,0-7.51-12.59-13.94-6.24-6.35,6.43,6.24,13.94,6.24,13.94,0,0-6.1,8.54,0,14.64,6.1,6.1,14.93-2,14.93-2,0,0,15.69,14.2-6.72,26.17,9.17,4.28,9.97,11.78,8.86,17.67l-14.3,12.94,4.37-4.11s-18.75,10.28-25.99-6.58c-12.67,22.02-26.37,5.91-26.37,5.91,0,0,8.37-8.57,2.46-14.86-5.91-6.29-14.63-.45-14.63-.45,0,0-7.12-12.81-13.74-6.67-6.54,6.23,5.81,14.12,5.81,14.12,0,0-6.36,8.35-.45,14.63,5.91,6.29,14.98-1.53,14.98-1.53,0,0,15.24,14.67-7.52,25.95,11.87,5.99,9.15,17.09,6.75,22.78l-4.6,4.16h-4.12v-12.9l-31.39-24.2v-36.77l-12.97-10.37v-18.77l-11.44-17.39v-3.51h3.81l-3.97-21.21h-3.97v-8.85h2.9v-6.56l-5.8-15.56h-3.97v-7.63h4.88l-5.49-21.82h-6.41v-10.68l10.83-10.83v-5.95h-29.92v5.95l10.83,10.83v10.68h-6.41l-5.49,21.82h4.88v7.63h-3.97l-5.8,15.56v6.56h2.9v8.85h-3.97l-3.97,21.21h3.81v3.51l-11.44,17.39v18.77l-12.97,10.37v36.77l-31.39,24.2v77.85l-16.59,16.59v75.18l-21,21h-7.73l-9.21-9.21,6.12-6.12v-18.5l-5.37-5.37v-4.8l3.62-3.62v-19.19l-4.67-4.67v-4.88l2.75-2.75v-19.76l-7.1-7.1,5.07-5.07v-13.72h-5.07v-7.71h-14.21v7.71h-5.07v13.72l5.07,5.07-7.1,7.1v19.76l2.75,2.75v4.88l-4.67,4.67v19.19l3.62,3.62v4.8l-5.37,5.37v18.5l6.12,6.12-9.21,9.21h-7.34v147.94l-.84,221.3-80.6,75.71v34.59c82.52-42.12,170.29-55.24,257.33-17.98ZM2702.28,1681.83h-50.59v-23.76h-124.62v23.76h-52.66v-23.76h-99.38v23.76h-26.58v-389.96l-17.48-17.48v-79.11l40.91-40.91c348.07,248.62,332.41,505.61,330.39,527.46ZM2385.22,671.8s-13.35,2.17-11.8,13.97c2.16,4.32-1.53,16.87-5.01,26.66h-20.88s-.75-6.61,7.27-6.61,7.75-7.05,7.75-7.05v-32.82h-3.98c-1.37,4.99-9.33,7.4-9.33,7.4h-3.98s-8.6-75.97-23.49-119.26c21.23,14.01,50.13,45.86,63.43,117.71ZM2249.03,566.16c10.86-33.72,19.53-38.12,22.21-38.63,2.68.52,11.34,4.91,22.2,38.63,13.14,40.77,18.84,83.9,19.08,107.19h-2.79s-7.96-2.4-9.33-7.4h-3.98v32.82s-.27,7.05,7.75,7.05,7.27,6.61,7.27,6.61h-80.44s-.75-6.61,7.27-6.61,7.75-7.05,7.75-7.05v-32.82h-3.98c-1.37,4.99-9.33,7.4-9.33,7.4h-2.79c.25-23.3,5.95-66.42,19.08-107.19ZM2220.78,553.77c-14.95,43.24-23.59,119.58-23.59,119.58h-3.98s-7.96-2.4-9.33-7.4h-3.98v32.82s-.27,7.05,7.75,7.05,7.27,6.61,7.27,6.61h-21.28c-3.48-9.79-7.17-22.34-5.01-26.66,1.55-11.8-11.8-13.97-11.8-13.97,13.41-72.43,42.66-104.19,63.94-118.03ZM2177.82,1154.37c0-20.43.18-41.1.44-60.08v60.08l40.91,40.91v79.11l-17.48,17.48v389.96h-46.85v-23.76h-99.38v23.76h-52.66v-23.76h-124.62v23.76h-30.77c-2.02-21.85-17.68-278.84,330.39-527.46Z"/>
+        <path d="M3423.13,2478.32c-122.81-217.79-374.38-514.02-620.19-408.8-215.96,92.42-275.78,357.07-538.01,357.07s-322.02-264.65-538.01-357.07c-245.79-105.22-497.38,191.02-620.2,408.8-175.62,311.47-262.83,801.89-124.42,1151.88,127.13,321.48,403.13,349.5,597.88,99.11,139.52-179.4,268.92-280.95,449.76-333.05,153.27-44.15,316.71-44.15,469.98,0,180.85,52.09,310.25,153.65,449.76,333.05,194.76,250.4,470.77,222.37,597.92-99.11,138.41-349.99,51.14-840.41-124.47-1151.88ZM1522.03,2822.47v-112.49h-112.47c-31.61,0-57.33-25.72-57.33-57.34s25.72-57.34,57.33-57.34h112.47v-112.48c0-31.61,25.72-57.34,57.33-57.34s57.33,25.73,57.33,57.34v112.48h112.5c31.62,0,57.33,25.72,57.33,57.34s-25.72,57.34-57.33,57.34h-112.5v112.49c0,31.61-25.72,57.34-57.33,57.34s-57.33-25.73-57.33-57.34ZM1697.58,3299.89c-77.78,0-140.83-63.06-140.83-140.83s63.05-140.84,140.83-140.84,140.83,63.08,140.83,140.84-63.05,140.83-140.83,140.83ZM2804.63,2559.83c52.29,0,94.83,42.55,94.83,94.86s-42.54,94.84-94.83,94.84-94.86-42.54-94.86-94.84,42.55-94.86,94.86-94.86ZM2832.32,3299.89c-77.8,0-140.84-63.06-140.84-140.83s63.05-140.84,140.84-140.84,140.81,63.08,140.81,140.84-63.05,140.83-140.81,140.83ZM3012.63,2953.48c-52.3,0-94.86-42.54-94.86-94.84s42.55-94.85,94.86-94.85,94.86,42.55,94.86,94.85-42.55,94.84-94.86,94.84ZM3012.63,2541.51c-52.3,0-94.86-42.54-94.86-94.83s42.55-94.86,94.86-94.86,94.86,42.55,94.86,94.86-42.55,94.83-94.86,94.83ZM3220.65,2749.53c-52.3,0-94.84-42.54-94.84-94.84s42.54-94.86,94.84-94.86,94.81,42.55,94.81,94.86-42.54,94.84-94.81,94.84Z"/>
+      </g>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top" aria-label="Aberdeen GameJam, back to top">
+        <svg class="brand__mark" viewBox="840 220 2850 3760" aria-hidden="true" focusable="false"><use href="#gj-mark"/></svg>
+        <span class="brand__name">Aberdeen GameJam</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#event">Event</a></li>
+          <li><a href="#prizes">Prizes</a></li>
+          <li><a href="#rules">Rules</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="#signup" data-signup>Sign up</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow px">University of Aberdeen · 27 Jan – 3 Feb 2027</p>
+          <h1 class="hero__title">
+            <span>Aberdeen</span>
+            <span>GameJam</span>
+            <span class="hero__year">2027</span>
+          </h1>
+          <p class="hero__lead">Teams have one week to build a game from scratch, on a theme announced on Wednesday 27 January 2027.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#signup" data-signup>Sign up</a>
+            <a class="btn btn--ghost btn--lg" href="#timeline">See the timeline</a>
+          </div>
+
+          <!-- Countdowns: filled in by script.js from the timeline below.
+               data-countdown="next" follows whichever milestone is next.
+               data-countdown="final-signup" always counts down to the milestone with
+               data-key="final-signup", and hides once the first countdown reaches it. -->
+          <div class="countdowns">
+            <div class="countdown" data-countdown="next" hidden>
+              <p class="countdown__label"></p>
+              <div class="countdown__clock" role="timer" aria-label="Time remaining">
+                <div class="cd-cell"><span class="cd-num" data-unit="d">00</span><span class="cd-unit px">days</span></div>
+                <div class="cd-cell"><span class="cd-num" data-unit="h">00</span><span class="cd-unit px">hrs</span></div>
+                <div class="cd-cell"><span class="cd-num" data-unit="m">00</span><span class="cd-unit px">min</span></div>
+                <div class="cd-cell"><span class="cd-num" data-unit="s">00</span><span class="cd-unit px">sec</span></div>
+              </div>
+              <p class="countdown__live px" hidden></p>
+            </div>
+            <div class="countdown" data-countdown="final-signup" hidden>
+              <p class="countdown__label"></p>
+              <div class="countdown__clock" role="timer" aria-label="Time remaining">
+                <div class="cd-cell"><span class="cd-num" data-unit="d">00</span><span class="cd-unit px">days</span></div>
+                <div class="cd-cell"><span class="cd-num" data-unit="h">00</span><span class="cd-unit px">hrs</span></div>
+                <div class="cd-cell"><span class="cd-num" data-unit="m">00</span><span class="cd-unit px">min</span></div>
+                <div class="cd-cell"><span class="cd-num" data-unit="s">00</span><span class="cd-unit px">sec</span></div>
+              </div>
+              <p class="countdown__live px" hidden></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__art">
+          <svg class="hero__mark" viewBox="840 220 2850 3760" role="img" aria-label="University of Aberdeen GameJam logo: a crown tower rising from a game controller">
+            <circle class="pb pb--1" cx="3012.63" cy="2446.68" r="100"/>
+            <circle class="pb pb--2" cx="3220.65" cy="2654.69" r="100"/>
+            <circle class="pb pb--3" cx="3012.63" cy="2858.64" r="100"/>
+            <circle class="pb pb--4" cx="2804.63" cy="2654.69" r="100"/>
+            <use href="#gj-mark"/>
+          </svg>
+        </div>
+      </div>
+      <div class="crenel" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--cream" id="about">
+      <div class="wrap">
+        <div class="about">
+          <div class="about__copy">
+            <h2>About</h2>
+            <p class="lead">After the success of last year, we will be running Aberdeen GameJam again in 2027.</p>
+            <p>Teams have one week to develop a game from scratch on a competition theme, which is announced at the start of that week.</p>
+            <p>The week ends with an in-person event, where teams get feedback from the judges and present their games. The winners are announced that afternoon.</p>
+          </div>
+
+          <aside class="theme-card" aria-labelledby="theme-card-title">
+            <h3 class="px theme-card__tag" id="theme-card-title">This year's theme</h3>
+            <div class="theme-card__tiles" role="img" aria-label="Not yet revealed">
+              <span>?</span><span>?</span><span>?</span>
+            </div>
+            <p>This year's general theme is yet to be revealed.</p>
+            <p>The more specific competition theme will be announced on <strong>Wednesday 27 January 2027</strong>.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TIMELINE ============
+         script.js reads the data-* attributes on each milestone to drive the
+         hero countdowns and the Done / Next up labels. Times are UK time (GMT).
+         data-at    = moment the countdown runs to
+         data-until = moment the milestone is over (defaults to data-at)
+         data-key   = name a countdown in the hero can point at (optional)
+         data-label = completes the sentence "Time until ..."
+         data-live  = shown instead of the clock between data-at and data-until -->
+    <section class="section section--navy" id="timeline">
+      <div class="wrap">
+        <h2>Timeline</h2>
+
+        <ol class="timeline">
+          <li class="milestone" data-milestone
+              data-label="t-shirt sign-ups close on Friday 18 December 2026"
+              data-at="2026-12-18T23:59:59Z">
+            <p class="milestone__status px" data-status></p>
+            <p class="milestone__date"><span class="px">Friday</span><time datetime="2026-12-18">18 Dec 2026</time></p>
+            <h3>T-shirt sign-ups close</h3>
+            <p>Sign up by this date to be eligible for a GameJam t-shirt.</p>
+          </li>
+
+          <li class="milestone" data-milestone data-key="final-signup"
+              data-label="sign-ups close on Thursday 14 January 2027"
+              data-at="2027-01-14T23:59:59Z">
+            <p class="milestone__status px" data-status></p>
+            <p class="milestone__date"><span class="px">Thursday</span><time datetime="2027-01-14">14 Jan 2027</time></p>
+            <h3>Sign-ups close</h3>
+            <p>Sign-ups for the jam close on this date.</p>
+          </li>
+
+          <li class="milestone" data-milestone
+              data-label="the theme is announced on Wednesday 27 January 2027"
+              data-at="2027-01-27T00:00:00Z" data-until="2027-01-27T23:59:59Z"
+              data-live="The theme is announced today.">
+            <p class="milestone__status px" data-status></p>
+            <p class="milestone__date"><span class="px">Wednesday</span><time datetime="2027-01-27">27 Jan 2027</time></p>
+            <h3>Theme announced</h3>
+            <p>The competition theme and prize categories are announced, and teams start their week of development.</p>
+          </li>
+
+          <li class="milestone" data-milestone
+              data-label="the in-person event starts at 10:00 on Wednesday 3 February 2027"
+              data-at="2027-02-03T10:00:00Z" data-until="2027-02-03T16:00:00Z"
+              data-live="The in-person event is happening now.">
+            <p class="milestone__status px" data-status></p>
+            <p class="milestone__date"><span class="px">Wednesday</span><time datetime="2027-02-03">3 Feb 2027</time></p>
+            <h3>In-person event</h3>
+            <p>The event runs from 10:00 to 16:00, with feedback from the judges, team presentations and the winners announced.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="crenel" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ IN-PERSON EVENT ============ -->
+    <section class="section section--cream" id="event">
+      <div class="wrap">
+        <h2>In-person event</h2>
+        <p class="section__intro">The in-person event runs from 10:00 to 16:00 on Wednesday 3 February 2027.</p>
+
+        <ol class="cards cards--3">
+          <li class="card">
+            <span class="card__step px">01</span>
+            <h3>Get feedback</h3>
+            <p>Teams bring their games along and get feedback from the judges.</p>
+          </li>
+          <li class="card">
+            <span class="card__step px">02</span>
+            <h3>Present your game</h3>
+            <p>Each team makes a short presentation of the game they built during the week.</p>
+          </li>
+          <li class="card">
+            <span class="card__step px">03</span>
+            <h3>Winners announced</h3>
+            <p>The judges choose a winner for each prize and announce them that afternoon.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PRIZES ============ -->
+    <section class="section section--cream section--flush-top" id="prizes">
+      <div class="wrap">
+        <h2>Prizes</h2>
+        <p class="section__intro">Prize categories will be announced alongside the theme on Wednesday 27 January 2027. The judges choose the winners at the in-person event.</p>
+
+        <ul class="cards cards--2">
+          <li class="card">
+            <h3>Best pitch or presentation</h3>
+            <p>One prize goes to the team with the best pitch or presentation at the in-person event.</p>
+          </li>
+          <li class="card">
+            <h3>Further categories</h3>
+            <p>The remaining prize categories will be announced on Wednesday 27 January 2027.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ RULES ============
+         To add a rule, add another <li>...</li> line inside the list below. -->
+    <section class="section section--navy" id="rules">
+      <div class="wrap">
+        <h2>Rules</h2>
+
+        <ul class="rules">
+          <li>Games must be developed from scratch during the week of the jam, between Wednesday 27 January and Wednesday 3 February 2027.</li>
+          <li>Games must follow the competition theme announced on Wednesday 27 January 2027.</li>
+          <li>Teams must sign up by Thursday 14 January 2027 to take part.</li>
+        </ul>
+      </div>
+      <div class="crenel" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ FAQS ============
+         To add a question, copy one <details class="faq">...</details> block
+         and change the question in <summary> and the answer below it.
+         An answer can hold several <p> paragraphs or a <ul> list. -->
+    <section class="section section--cream" id="faqs">
+      <div class="wrap">
+        <h2>FAQs</h2>
+
+        <div class="faqs">
+          <details class="faq">
+            <summary>When is the theme announced?</summary>
+            <p>The competition theme is announced on Wednesday 27 January 2027. Teams then have one week to build their game.</p>
+          </details>
+
+          <details class="faq">
+            <summary>When do sign-ups close?</summary>
+            <p>Sign-ups close on Thursday 14 January 2027.</p>
+          </details>
+
+          <details class="faq">
+            <summary>How do I get a GameJam t-shirt?</summary>
+            <p>Sign up by Friday 18 December 2026 to be eligible for a t-shirt.</p>
+          </details>
+
+          <details class="faq">
+            <summary>When is the in-person event?</summary>
+            <p>The in-person event runs from 10:00 to 16:00 on Wednesday 3 February 2027.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SPONSORS ============
+         To add a sponsor, save their logo in assets/sponsors/ and copy this block
+         into the list below. The link, the logo and the description are each optional.
+
+          <li class="sponsor">
+            <a class="sponsor__logo" href="https://sponsor-website.example">
+              <img src="assets/sponsors/sponsor-logo.svg" alt="Sponsor name">
+            </a>
+            <h3>Sponsor name</h3>
+            <p>A sentence about what they are sponsoring.</p>
+          </li>
+    -->
+    <section class="section section--cream section--flush-top" id="sponsors">
+      <div class="wrap">
+        <h2>Sponsors</h2>
+
+        <ul class="sponsors">
+          <li class="sponsor">
+            <!-- ABVentures logo: save it as assets/sponsors/abventures.svg (or .png), then uncomment the next three lines.
+            <div class="sponsor__logo">
+              <img src="assets/sponsors/abventures.svg" alt="ABVentures">
+            </div>
+            -->
+            <h3>ABVentures</h3>
+            <p>ABVentures are sponsoring two prizes at the in-person event. One is for the best pitch or presentation, and the other is in a category to be announced.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SIGN UP ============ -->
+    <section class="signup" id="signup">
+      <div class="wrap signup__inner">
+        <div class="signup__copy">
+          <h2>Sign up</h2>
+          <ul class="deadlines">
+            <li>Sign up by Friday 18 December 2026 to be eligible for a t-shirt.</li>
+            <li>Sign-ups close on Thursday 14 January 2027.</li>
+          </ul>
+        </div>
+        <div class="signup__action">
+          <!-- SIGN-UP LINK: paste the sign-up form URL into the href below. This is the only place it goes.
+               While href is empty, the button is hidden and the note below it shows instead.
+               Once it is set, the Sign up buttons in the navigation bar and at the top of the page
+               link straight to the form as well (script.js copies the URL to them). -->
+          <a class="btn btn--dark btn--lg signup-link" href="">Sign up now</a>
+          <p class="signup__pending">The sign-up form will be linked here soon.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============
+         To add a contact method, copy one of these lines into the list below.
+         Once the list has an entry, the "will be added here soon" note hides itself.
+
+          <li><span>Email</span> <a href="mailto:name@example.com">name@example.com</a></li>
+          <li><span>Instagram</span> <a href="https://www.instagram.com/yourpage">@yourpage</a></li>
+    -->
+    <section class="section section--navy" id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p class="section__intro">If you have a question about the jam that the FAQs do not answer, get in touch with the organisers.</p>
+
+        <ul class="contacts">
+        </ul>
+        <p class="contact__pending">Contact details will be added here soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <img class="site-footer__logo" src="assets/logo-light.svg" alt="University of Aberdeen GameJam" width="150" height="180">
+      <div class="site-footer__text">
+        <p><strong>Aberdeen GameJam 2027</strong></p>
+        <p>The theme is announced on Wednesday 27 January 2027 and the in-person event is on Wednesday 3 February 2027.</p>
+      </div>
+      <a class="site-footer__top px" href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
