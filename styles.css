@@ -1,4 +1,4 @@
-/* Aberdeen GameJam 2027
+/* University of Aberdeen GameJam 2027
    Palette is built around the logo navy (#111d2f). The four accents are the
    controller's face buttons and are reused for the four timeline milestones. */
 
@@ -163,12 +163,21 @@ a { color: inherit; }
   color: var(--cream);
 }
 .brand__mark { height: 2.25rem; width: auto; fill: currentColor; flex: none; }
+/* Stacked like the logo: small "University of Aberdeen" over "GameJam" */
 .brand__name {
   font-weight: 900;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 1;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+.brand__uni {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
 }
 
 .nav { display: flex; align-items: center; gap: 1.5rem; }
@@ -218,6 +227,13 @@ a { color: inherit; }
   color: var(--cream);
 }
 .hero__title span { display: block; }
+.hero__uni {
+  margin-bottom: 0.35em;
+  font-weight: 800;
+  font-size: 0.31em;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+}
 .hero__year { color: var(--yellow); }
 
 .hero__lead {

@@ -1,4 +1,4 @@
-# Aberdeen GameJam 2027 website
+# University of Aberdeen GameJam 2027 website
 
 This is the website for the University of Aberdeen GameJam 2027. It is a single static page with no build step, published with GitHub Pages from the `main` branch.
 

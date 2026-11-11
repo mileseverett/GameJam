@@ -1,4 +1,4 @@
-/* Aberdeen GameJam 2027
+/* University of Aberdeen GameJam 2027
    Drives the hero countdowns and the Done / Next up labels on the timeline.
    All dates live in index.html, on the data-* attributes of each timeline
    milestone, so that is the only place they need to be edited.
@@ -66,7 +66,7 @@
     cd.label.hidden = isLive;
 
     if (!milestone) {
-      set(cd.label, 'Aberdeen GameJam 2027 has finished. Thank you to everyone who took part.');
+      set(cd.label, 'The University of Aberdeen GameJam 2027 has finished. Thank you to everyone who took part.');
       return;
     }
     if (isLive) {
