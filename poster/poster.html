@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>University of Aberdeen GameJam 2027 poster</title>
+<!-- A3 landscape poster. To make a PDF, open this file in Chrome and print it
+     with "Save as PDF", margins set to "None" and background graphics on.
+     The QR code points to https://mileseverett.github.io/GameJam/ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800;900&family=Silkscreen&display=swap" rel="stylesheet">
+<style>
+  @page { size: 420mm 297mm; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #111d2f; --navy-700: #1a2a44; --navy-600: #2b3f61; --cream: #f6f1e7;
+    --yellow: #ffc93c; --coral: #ff6b6b; --mint: #4fd1b5; --sky: #6cb4ff;
+    --on-dark: #eef1f7; --muted: #a5b4cb;
+  }
+  html { background: var(--yellow); }
+  html, body { width: 420mm; height: 296.6mm; }
+  body {
+    font-family: "Archivo", system-ui, Helvetica, Arial, sans-serif;
+    color: var(--on-dark);
+    background: var(--navy);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    overflow: hidden;
+  }
+  .px { font-family: "Silkscreen", ui-monospace, monospace; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .poster {
+    position: relative;
+    width: 420mm;
+    height: 296.6mm;
+    padding: 20mm 22mm 0;
+    display: grid;
+    grid-template-columns: 1fr 108mm;
+    grid-template-rows: 1fr auto auto;
+    column-gap: 10mm;
+    background:
+      radial-gradient(160mm 120mm at 82% 34%, rgba(108, 180, 255, 0.15), transparent 70%),
+      radial-gradient(rgba(255, 255, 255, 0.07) 0.3mm, transparent 0.45mm) 0 0 / 6mm 6mm,
+      var(--navy);
+  }
+
+  .dates { font-size: 4.4mm; color: var(--yellow); margin-bottom: 6mm; }
+  h1 { text-transform: uppercase; color: var(--cream); font-weight: 900; }
+  h1 span { display: block; }
+  .uni { font-size: 13.4mm; font-weight: 800; letter-spacing: 0.14em; line-height: 1.2; margin-bottom: 4mm; }
+  .name, .year { font-size: 44mm; line-height: 0.92; letter-spacing: -0.02em; }
+  .year { color: var(--yellow); }
+  .lead { margin-top: 9mm; font-size: 8.8mm; font-weight: 600; line-height: 1.28; white-space: nowrap; }
+  .sub { margin-top: 4mm; font-size: 6mm; font-weight: 500; line-height: 1.35; color: var(--muted); max-width: 235mm; text-wrap: balance; }
+
+  .art { display: flex; justify-content: center; align-items: flex-start; }
+  .art svg { height: 142mm; width: auto; fill: var(--cream); filter: drop-shadow(0 5mm 9mm rgba(0, 0, 0, 0.35)); }
+
+  .info {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    gap: 9mm;
+    margin-bottom: 15mm;
+  }
+  .when { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8mm; }
+  .date { position: relative; padding-top: 9mm; }
+  .date::before { content: ""; position: absolute; left: 0; right: -8mm; top: 2mm; height: 0.6mm; background: var(--navy-600); }
+  .date:last-child::before { right: 0; }
+  .date::after { content: ""; position: absolute; left: 0; top: 0; width: 4.6mm; height: 4.6mm; background: var(--accent); }
+  .date:nth-child(1) { --accent: var(--yellow); }
+  .date:nth-child(2) { --accent: var(--coral); }
+  .date:nth-child(3) { --accent: var(--mint); }
+  .date .px { font-size: 3.5mm; color: var(--accent); }
+  .date .day { font-size: 17mm; font-weight: 900; line-height: 1.05; color: var(--cream); letter-spacing: -0.01em; }
+  .date .what { margin-top: 1.5mm; font-size: 6.6mm; font-weight: 800; line-height: 1.2; }
+  .date .note { margin-top: 1.5mm; font-size: 4.7mm; font-weight: 500; line-height: 1.35; color: var(--muted); }
+
+  .qr {
+    flex: none;
+    width: 62mm;
+    padding: 4mm 4mm 4.5mm;
+    background: #fff;
+    border-radius: 1.5mm;
+    box-shadow: 2.2mm 2.2mm 0 var(--yellow);
+    color: var(--navy);
+    text-align: center;
+  }
+  .qr svg { display: block; width: 54mm; height: 54mm; }
+  .qr p { margin-top: 1.5mm; font-size: 5mm; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+
+  .band {
+    grid-column: 1 / -1;
+    position: relative;
+    margin: 0 -22mm;
+    padding: 0 22mm;
+    height: 21mm;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--yellow);
+    color: var(--navy);
+    font-size: 6.6mm;
+    font-weight: 800;
+  }
+  .band::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: -4mm;
+    height: 4.1mm;
+    background: repeating-linear-gradient(90deg, var(--yellow) 0 8mm, transparent 8mm 16mm);
+  }
+  .band .url { font-weight: 900; letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="head">
+    <p class="dates px">27 January – 3 February 2027</p>
+    <h1>
+      <span class="uni">University of Aberdeen</span>
+      <span class="name">GameJam</span>
+      <span class="year">2027</span>
+    </h1>
+    <p class="lead">Teams of up to 4 have one week to build a game from scratch.</p>
+    <p class="sub">Students in 1st and 2nd year compete for separate prizes from students in 3rd year and above.</p>
+  </div>
+
+  <div class="art">
+    <svg viewBox="840 220 2850 3760" role="img" aria-label="University of Aberdeen GameJam logo">
+      <circle cx="3012.63" cy="2446.68" r="100" fill="#ffc93c"/>
+      <circle cx="3220.65" cy="2654.69" r="100" fill="#ff6b6b"/>
+      <circle cx="3012.63" cy="2858.64" r="100" fill="#4fd1b5"/>
+      <circle cx="2804.63" cy="2654.69" r="100" fill="#6cb4ff"/>
+      <path d="M1723.05,1995.45c215.99,92.42,275.8,357.07,538.01,357.07s322.06-264.65,538.01-357.07c89.78-38.43,180.33-23.27,265.09,22.03v-38.64l-80.6-75.71-.83-219.77h19.82v-149.47h-7.34l-9.21-9.21,6.12-6.12v-18.5l-5.37-5.37v-4.8l3.62-3.62v-19.19l-4.67-4.67v-4.88l2.75-2.75v-19.76l-7.1-7.1,5.07-5.07v-13.72h-5.07v-7.71h-14.21v7.71h-5.07v13.72l5.07,5.07-7.1,7.1v19.76l2.75,2.75v4.88l-4.67,4.67v19.19l3.62,3.62v4.8l-5.37,5.37v18.5l6.12,6.12-9.21,9.21h-7.73l-21-21v-75.18l-16.59-16.59v-77.85l-31.39-24.2v-36.77l-12.97-10.37v-18.77l-11.44-17.39v-3.51h3.81l-3.97-21.21h-3.97v-8.85h2.9v-6.56l-5.8-15.56h-3.97v-7.63h4.88l-5.49-21.82h-6.41v-10.68l10.83-10.83v-5.95h-29.92v5.95l10.83,10.83v10.68h-6.41l-5.49,21.82h4.88v7.63h-3.97l-5.8,15.56v6.56h2.9v8.85h-3.97l-3.97,21.21h3.81v3.51l-11.44,17.39v18.77l-12.97,10.37v36.77l-31.39,24.2v12.9h-4.12l-4.6-4.16c-2.4-5.69-5.11-16.79,6.75-22.78-22.76-11.28-7.52-25.95-7.52-25.95,0,0,9.07,7.82,14.98,1.53,5.91-6.29-.45-14.63-.45-14.63,0,0,12.35-7.9,5.81-14.12-6.62-6.14-13.74,6.67-13.74,6.67,0,0-8.72-5.83-14.63.45-5.91,6.29,2.46,14.86,2.46,14.86,0,0-13.7,16.12-26.37-5.91-7.25,16.87-25.99,6.58-25.99,6.58l4.36,4.1-14.29-12.93c-1.11-5.88-.31-13.39,8.86-17.67-22.4-11.98-6.72-26.17-6.72-26.17,0,0,8.83,8.1,14.93,2,6.1-6.1,0-14.64,0-14.64,0,0,12.59-7.51,6.24-13.94-6.43-6.35-13.94,6.24-13.94,6.24,0,0-8.54-6.1-14.64,0-6.1,6.1,2,14.93,2,14.93,0,0-14.2,15.69-26.17-6.72-7.1,15.21-23.07,7.45-25.75,6.01l-11.14-10.08v-69.96h9.94v-6.5h-9.94l16.44-16.44h-16.44v-7.64l5.55-5.55v-20.06h-8.61v-6.5l4.97-4.97v-18.35h-7.64v-7.26l6.31-6.31v-19.3h-6.31l9.56-9.56v-8.41h-7.64v-7.64l-5.16-5.16h-6.5l-5.16,5.16v7.64h-7.64v8.41l9.56,9.56h-6.31v19.3l6.31,6.31v7.26h-7.64v18.35l4.97,4.97v6.5h-8.61v20.06l5.55,5.55v7.64h-16.44l16.44,16.44h-9.94v6.5h9.94v47.82l-34.14-30.91c-1.02-5.83-.08-13.13,8.91-17.33-22.4-11.98-6.72-26.17-6.72-26.17,0,0,8.83,8.1,14.93,2,6.1-6.1,0-14.64,0-14.64,0,0,12.59-7.51,6.24-13.94-6.43-6.35-13.94,6.24-13.94,6.24,0,0-8.54-6.1-14.64,0-6.1,6.1,2,14.93,2,14.93,0,0-14.2,15.69-26.17-6.72-6.62,14.18-20.93,8.4-25.03,6.38l-11.95-10.82c-.36-5.35,1.35-11.37,9.19-15.03-22.4-11.98-6.72-26.17-6.72-26.17,0,0,8.83,8.1,14.93,2,6.1-6.1,0-14.64,0-14.64,0,0,12.59-7.51,6.24-13.94-6.42-6.34-13.94,6.24-13.94,6.24,0,0-8.54-6.1-14.64,0-6.1,6.1,2,14.93,2,14.93,0,0-14.2,15.69-26.17-6.72-5.13,11-14.9,9.97-20.94,8.02l-10.55-9.54v-174.22l8.86-8.86v-146.45l18.66-50.14h-6.41l12.06-25.63h-39.58s-14.96-110.87-109.98-146.54h0s-21.45-20.92-21.45-39.41c10.76-2.48,19.32-18.21,19.32-31.46s-19.32-28.7-19.32-34.77v-42.77h3.04l8.67,8.67h13.96v-39.3h-16.83v5.79l-5.52,5.52h-3.31v-23.73l7.31-7.31v-7.59h-41.82v7.59l7.31,7.31v23.73h-3.31l-5.52-5.52v-5.79h-16.83v39.3h13.96l8.67-8.67h3.04v42.77c0,6.07-19.32,21.52-19.32,34.77s8.55,28.98,19.32,31.46c0,17.08-18.26,36.18-21.05,39-96.01,35.23-111.09,146.95-111.09,146.95h-31.5l12.06,25.63h-6.41l18.66,50.14v146.45l8.86,8.86v173.82l-10.99,9.94c-6.05,1.95-15.81,2.98-20.94-8.02-11.98,22.4-26.17,6.72-26.17,6.72,0,0,8.1-8.83,2-14.93-6.1-6.1-14.64,0-14.64,0,0,0-7.51-12.59-13.94-6.24-6.35,6.43,6.24,13.94,6.24,13.94,0,0-6.1,8.54,0,14.64,6.1,6.1,14.93-2,14.93-2,0,0,15.69,14.2-6.72,26.17,7.84,3.66,9.55,9.68,9.19,15.03l-11.95,10.82c-4.1,2.02-18.42,7.8-25.03-6.38-11.98,22.4-26.17,6.72-26.17,6.72,0,0,8.1-8.83,2-14.93-6.1-6.1-14.64,0-14.64,0,0,0-7.51-12.59-13.94-6.24-6.34,6.42,6.24,13.94,6.24,13.94,0,0-6.1,8.54,0,14.64,6.1,6.1,14.93-2,14.93-2,0,0,15.69,14.2-6.72,26.17,9,4.2,9.93,11.5,8.91,17.33l-34.14,30.9v-47.82h9.94v-6.5h-9.94l16.44-16.44h-16.44v-7.64l5.55-5.55v-20.06h-8.61v-6.5l4.97-4.97v-18.35h-7.64v-7.26l6.31-6.31v-19.3h-6.31l9.56-9.56v-8.41h-7.64v-7.64l-5.16-5.16h-6.5l-5.16,5.16v7.64h-7.64v8.41l9.56,9.56h-6.31v19.3l6.31,6.31v7.26h-7.64v18.35l4.97,4.97v6.5h-8.61v20.06l5.55,5.55v7.64h-16.44l16.44,16.44h-9.94v6.5h9.94v69.96l-11.14,10.08c-2.69,1.44-18.65,9.2-25.75-6.01-11.98,22.4-26.17,6.72-26.17,6.72,0,0,8.1-8.83,2-14.93-6.1-6.1-14.64,0-14.64,0,0,0-7.51-12.59-13.94-6.24-6.35,6.43,6.24,13.94,6.24,13.94,0,0-6.1,8.54,0,14.64,6.1,6.1,14.93-2,14.93-2,0,0,15.69,14.2-6.72,26.17,9.17,4.28,9.97,11.78,8.86,17.67l-14.3,12.94,4.37-4.11s-18.75,10.28-25.99-6.58c-12.67,22.02-26.37,5.91-26.37,5.91,0,0,8.37-8.57,2.46-14.86-5.91-6.29-14.63-.45-14.63-.45,0,0-7.12-12.81-13.74-6.67-6.54,6.23,5.81,14.12,5.81,14.12,0,0-6.36,8.35-.45,14.63,5.91,6.29,14.98-1.53,14.98-1.53,0,0,15.24,14.67-7.52,25.95,11.87,5.99,9.15,17.09,6.75,22.78l-4.6,4.16h-4.12v-12.9l-31.39-24.2v-36.77l-12.97-10.37v-18.77l-11.44-17.39v-3.51h3.81l-3.97-21.21h-3.97v-8.85h2.9v-6.56l-5.8-15.56h-3.97v-7.63h4.88l-5.49-21.82h-6.41v-10.68l10.83-10.83v-5.95h-29.92v5.95l10.83,10.83v10.68h-6.41l-5.49,21.82h4.88v7.63h-3.97l-5.8,15.56v6.56h2.9v8.85h-3.97l-3.97,21.21h3.81v3.51l-11.44,17.39v18.77l-12.97,10.37v36.77l-31.39,24.2v77.85l-16.59,16.59v75.18l-21,21h-7.73l-9.21-9.21,6.12-6.12v-18.5l-5.37-5.37v-4.8l3.62-3.62v-19.19l-4.67-4.67v-4.88l2.75-2.75v-19.76l-7.1-7.1,5.07-5.07v-13.72h-5.07v-7.71h-14.21v7.71h-5.07v13.72l5.07,5.07-7.1,7.1v19.76l2.75,2.75v4.88l-4.67,4.67v19.19l3.62,3.62v4.8l-5.37,5.37v18.5l6.12,6.12-9.21,9.21h-7.34v147.94l-.84,221.3-80.6,75.71v34.59c82.52-42.12,170.29-55.24,257.33-17.98ZM2702.28,1681.83h-50.59v-23.76h-124.62v23.76h-52.66v-23.76h-99.38v23.76h-26.58v-389.96l-17.48-17.48v-79.11l40.91-40.91c348.07,248.62,332.41,505.61,330.39,527.46ZM2385.22,671.8s-13.35,2.17-11.8,13.97c2.16,4.32-1.53,16.87-5.01,26.66h-20.88s-.75-6.61,7.27-6.61,7.75-7.05,7.75-7.05v-32.82h-3.98c-1.37,4.99-9.33,7.4-9.33,7.4h-3.98s-8.6-75.97-23.49-119.26c21.23,14.01,50.13,45.86,63.43,117.71ZM2249.03,566.16c10.86-33.72,19.53-38.12,22.21-38.63,2.68.52,11.34,4.91,22.2,38.63,13.14,40.77,18.84,83.9,19.08,107.19h-2.79s-7.96-2.4-9.33-7.4h-3.98v32.82s-.27,7.05,7.75,7.05,7.27,6.61,7.27,6.61h-80.44s-.75-6.61,7.27-6.61,7.75-7.05,7.75-7.05v-32.82h-3.98c-1.37,4.99-9.33,7.4-9.33,7.4h-2.79c.25-23.3,5.95-66.42,19.08-107.19ZM2220.78,553.77c-14.95,43.24-23.59,119.58-23.59,119.58h-3.98s-7.96-2.4-9.33-7.4h-3.98v32.82s-.27,7.05,7.75,7.05,7.27,6.61,7.27,6.61h-21.28c-3.48-9.79-7.17-22.34-5.01-26.66,1.55-11.8-11.8-13.97-11.8-13.97,13.41-72.43,42.66-104.19,63.94-118.03ZM2177.82,1154.37c0-20.43.18-41.1.44-60.08v60.08l40.91,40.91v79.11l-17.48,17.48v389.96h-46.85v-23.76h-99.38v23.76h-52.66v-23.76h-124.62v23.76h-30.77c-2.02-21.85-17.68-278.84,330.39-527.46Z"/><path d="M3423.13,2478.32c-122.81-217.79-374.38-514.02-620.19-408.8-215.96,92.42-275.78,357.07-538.01,357.07s-322.02-264.65-538.01-357.07c-245.79-105.22-497.38,191.02-620.2,408.8-175.62,311.47-262.83,801.89-124.42,1151.88,127.13,321.48,403.13,349.5,597.88,99.11,139.52-179.4,268.92-280.95,449.76-333.05,153.27-44.15,316.71-44.15,469.98,0,180.85,52.09,310.25,153.65,449.76,333.05,194.76,250.4,470.77,222.37,597.92-99.11,138.41-349.99,51.14-840.41-124.47-1151.88ZM1522.03,2822.47v-112.49h-112.47c-31.61,0-57.33-25.72-57.33-57.34s25.72-57.34,57.33-57.34h112.47v-112.48c0-31.61,25.72-57.34,57.33-57.34s57.33,25.73,57.33,57.34v112.48h112.5c31.62,0,57.33,25.72,57.33,57.34s-25.72,57.34-57.33,57.34h-112.5v112.49c0,31.61-25.72,57.34-57.33,57.34s-57.33-25.73-57.33-57.34ZM1697.58,3299.89c-77.78,0-140.83-63.06-140.83-140.83s63.05-140.84,140.83-140.84,140.83,63.08,140.83,140.84-63.05,140.83-140.83,140.83ZM2804.63,2559.83c52.29,0,94.83,42.55,94.83,94.86s-42.54,94.84-94.83,94.84-94.86-42.54-94.86-94.84,42.55-94.86,94.86-94.86ZM2832.32,3299.89c-77.8,0-140.84-63.06-140.84-140.83s63.05-140.84,140.84-140.84,140.81,63.08,140.81,140.84-63.05,140.83-140.81,140.83ZM3012.63,2953.48c-52.3,0-94.86-42.54-94.86-94.84s42.55-94.85,94.86-94.85,94.86,42.55,94.86,94.85-42.55,94.84-94.86,94.84ZM3012.63,2541.51c-52.3,0-94.86-42.54-94.86-94.83s42.55-94.86,94.86-94.86,94.86,42.55,94.86,94.86-42.55,94.83-94.86,94.83ZM3220.65,2749.53c-52.3,0-94.84-42.54-94.84-94.84s42.54-94.86,94.84-94.86,94.81,42.55,94.81,94.86-42.54,94.84-94.81,94.84Z"/>
+    </svg>
+  </div>
+
+  <div class="info">
+    <div class="when">
+      <div class="date">
+        <p class="px">Wednesday</p>
+        <p class="day">20 Jan</p>
+        <p class="what">Sign-ups close</p>
+        <p class="note">Sign up by Friday 18 December to be eligible for a t-shirt.</p>
+      </div>
+      <div class="date">
+        <p class="px">Wednesday</p>
+        <p class="day">27 Jan</p>
+        <p class="what">Theme announced</p>
+        <p class="note">Teams start their week of development.</p>
+      </div>
+      <div class="date">
+        <p class="px">Wednesday</p>
+        <p class="day">3 Feb</p>
+        <p class="what">In-person event</p>
+        <p class="note">From 10:00 to 16:00. Teams present their games and the winners are announced.</p>
+      </div>
+    </div>
+
+    <div class="qr">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 41 41" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path fill="#111d2f" d="M0 0h7v1h-7zM8 0h2v1h-2zM11 0h1v1h-1zM13 0h1v1h-1zM16 0h4v1h-4zM22 0h2v1h-2zM26 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM10 1h2v1h-2zM13 1h1v1h-1zM15 1h2v1h-2zM18 1h1v1h-1zM21 1h4v1h-4zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM12 2h1v1h-1zM15 2h2v1h-2zM18 2h3v1h-3zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h3v1h-3zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM15 3h1v1h-1zM17 3h2v1h-2zM20 3h1v1h-1zM22 3h2v1h-2zM26 3h1v1h-1zM28 3h3v1h-3zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM10 4h1v1h-1zM12 4h3v1h-3zM16 4h1v1h-1zM18 4h3v1h-3zM23 4h1v1h-1zM26 4h1v1h-1zM28 4h3v1h-3zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM12 5h1v1h-1zM15 5h1v1h-1zM17 5h3v1h-3zM21 5h2v1h-2zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h7v1h-7zM8 7h2v1h-2zM11 7h2v1h-2zM17 7h2v1h-2zM21 7h1v1h-1zM1 8h1v1h-1zM3 8h1v1h-1zM5 8h4v1h-4zM11 8h3v1h-3zM15 8h1v1h-1zM21 8h1v1h-1zM25 8h3v1h-3zM29 8h2v1h-2zM32 8h1v1h-1zM0 9h1v1h-1zM8 9h1v1h-1zM13 9h2v1h-2zM16 9h2v1h-2zM22 9h1v1h-1zM24 9h4v1h-4zM32 9h1v1h-1zM0 10h1v1h-1zM2 10h2v1h-2zM5 10h3v1h-3zM15 10h1v1h-1zM18 10h3v1h-3zM22 10h1v1h-1zM27 10h2v1h-2zM30 10h1v1h-1zM32 10h1v1h-1zM1 11h1v1h-1zM7 11h2v1h-2zM12 11h1v1h-1zM14 11h1v1h-1zM16 11h1v1h-1zM18 11h2v1h-2zM21 11h2v1h-2zM24 11h1v1h-1zM28 11h2v1h-2zM31 11h2v1h-2zM1 12h1v1h-1zM6 12h2v1h-2zM11 12h4v1h-4zM18 12h1v1h-1zM20 12h3v1h-3zM24 12h3v1h-3zM29 12h1v1h-1zM1 13h2v1h-2zM4 13h2v1h-2zM7 13h1v1h-1zM9 13h1v1h-1zM15 13h1v1h-1zM18 13h1v1h-1zM20 13h5v1h-5zM27 13h2v1h-2zM31 13h2v1h-2zM0 14h2v1h-2zM5 14h5v1h-5zM12 14h3v1h-3zM17 14h1v1h-1zM19 14h1v1h-1zM21 14h1v1h-1zM23 14h1v1h-1zM25 14h3v1h-3zM30 14h2v1h-2zM0 15h3v1h-3zM9 15h1v1h-1zM11 15h1v1h-1zM15 15h1v1h-1zM18 15h1v1h-1zM20 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM28 15h1v1h-1zM31 15h1v1h-1zM1 16h1v1h-1zM4 16h4v1h-4zM9 16h2v1h-2zM13 16h2v1h-2zM17 16h1v1h-1zM21 16h2v1h-2zM24 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM31 16h1v1h-1zM0 17h1v1h-1zM10 17h1v1h-1zM13 17h1v1h-1zM15 17h1v1h-1zM17 17h2v1h-2zM23 17h3v1h-3zM27 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM1 18h1v1h-1zM6 18h2v1h-2zM11 18h1v1h-1zM13 18h1v1h-1zM15 18h2v1h-2zM20 18h2v1h-2zM24 18h3v1h-3zM30 18h3v1h-3zM0 19h1v1h-1zM2 19h4v1h-4zM8 19h2v1h-2zM11 19h2v1h-2zM14 19h2v1h-2zM17 19h1v1h-1zM20 19h2v1h-2zM23 19h5v1h-5zM1 20h3v1h-3zM5 20h7v1h-7zM13 20h3v1h-3zM20 20h1v1h-1zM22 20h1v1h-1zM24 20h2v1h-2zM31 20h1v1h-1zM3 21h2v1h-2zM7 21h1v1h-1zM9 21h1v1h-1zM12 21h5v1h-5zM19 21h1v1h-1zM21 21h1v1h-1zM24 21h3v1h-3zM29 21h1v1h-1zM31 21h2v1h-2zM0 22h2v1h-2zM4 22h3v1h-3zM9 22h2v1h-2zM16 22h4v1h-4zM22 22h1v1h-1zM27 22h1v1h-1zM32 22h1v1h-1zM1 23h1v1h-1zM4 23h1v1h-1zM10 23h1v1h-1zM12 23h3v1h-3zM17 23h1v1h-1zM19 23h4v1h-4zM24 23h1v1h-1zM26 23h3v1h-3zM0 24h1v1h-1zM2 24h2v1h-2zM6 24h1v1h-1zM9 24h1v1h-1zM12 24h1v1h-1zM14 24h1v1h-1zM17 24h1v1h-1zM21 24h1v1h-1zM23 24h6v1h-6zM31 24h2v1h-2zM8 25h3v1h-3zM14 25h1v1h-1zM16 25h2v1h-2zM19 25h3v1h-3zM23 25h2v1h-2zM28 25h2v1h-2zM31 25h2v1h-2zM0 26h7v1h-7zM8 26h3v1h-3zM14 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h4v1h-4zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h2v1h-2zM13 27h4v1h-4zM19 27h3v1h-3zM24 27h1v1h-1zM28 27h1v1h-1zM0 28h1v1h-1zM2 28h3v1h-3zM6 28h1v1h-1zM11 28h4v1h-4zM18 28h3v1h-3zM24 28h6v1h-6zM31 28h1v1h-1zM0 29h1v1h-1zM2 29h3v1h-3zM6 29h1v1h-1zM8 29h5v1h-5zM14 29h1v1h-1zM16 29h2v1h-2zM19 29h1v1h-1zM21 29h1v1h-1zM23 29h1v1h-1zM26 29h1v1h-1zM28 29h4v1h-4zM0 30h1v1h-1zM2 30h3v1h-3zM6 30h1v1h-1zM9 30h1v1h-1zM12 30h1v1h-1zM18 30h5v1h-5zM28 30h1v1h-1zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h1v1h-1zM10 31h2v1h-2zM13 31h1v1h-1zM15 31h10v1h-10zM0 32h7v1h-7zM11 32h2v1h-2zM16 32h4v1h-4zM21 32h1v1h-1zM24 32h2v1h-2zM28 32h2v1h-2zM31 32h1v1h-1z"/></svg>
+      <p>Scan to sign up</p>
+    </div>
+  </div>
+
+  <div class="band">
+    <span>Sign up and read the rules on the website</span>
+    <span class="url">mileseverett.github.io/GameJam</span>
+  </div>
+</div>
+</body>
+</html>

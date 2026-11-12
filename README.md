@@ -17,6 +17,7 @@ All of the content is in `index.html`. Each section starts with a comment that e
 | Rules | Add an `<li>` to the list in the Rules section. |
 | FAQs | Copy a `<details class="faq">` block in the FAQs section. |
 | Sponsors | Save the logo in `assets/sponsors/`, then copy the template from the comment above the Sponsors section. |
+| Discord invite link | It appears in several places. Search for `discord.gg` and replace every match. |
 | Contact details | Copy a line from the comment above the Contact section into the list. |
 
 Colours and layout are in `styles.css`. The countdowns and the timeline status labels are driven by `script.js`, which reads the dates from `index.html`.
